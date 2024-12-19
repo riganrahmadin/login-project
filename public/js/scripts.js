@@ -1,11 +1,9 @@
-<script>
-    function myFunction() {
-      var x = document.getElementById("myInput");
-      if (x.type === "password") {
-        x.type = "text";
-      } else {
-        x.type = "password";
-      }
-    }
+function Toggle() {
+  let temp = document.getElementById("typepass");
 
-  </script>
+  if (temp.type === "password") {
+    temp.type = "text";
+  } else {
+    temp.type = "password";
+  }
+}

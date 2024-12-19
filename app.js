@@ -25,7 +25,6 @@ db.connect((err) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, "/public")));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,6 +35,8 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+//dirketori public
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 
