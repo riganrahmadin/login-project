@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const session = require("express-session");
 const mysql = require("mysql2");
 const path = require("path");
-const { error } = require("console");
 
 const app = express();
 const PORT = 3000;
@@ -25,7 +24,6 @@ db.connect((err) => {
   }
 });
 
-
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
@@ -36,7 +34,6 @@ app.use(
   })
 );
 
-//dirketori public
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 
@@ -44,7 +41,6 @@ app.set("view engine", "ejs");
 app.get("/", (req, res) => {
   res.render("login", { error: null });
 });
-
 
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
